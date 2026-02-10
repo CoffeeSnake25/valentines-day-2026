@@ -7,8 +7,32 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <h1>Valentine Card Loading...</h1>
-
-        <script src=""script.js></script>
+        <!-- Initial loading state placeholder (may animate later)
+         h1>Valentine Card Loading...</h1> -->
+        <header>
+            <h1>Happy Valentine's Day 2026 {{HER_NAME}}</h1>
+            <p>{{SHORT_NOTE}}</p>
+        </header>
+         <main>
+            <section id="long-message" aria-hidden="true"> 
+                <p>
+                   {{LONG_NOTE}}
+                </p>
+            </section>
+            <section aria-labelledby="reasons-title">
+                <h2 id="reasons-title">Reasons Why You're My Favorite Person</h2>
+                <p id="reason-text">
+                    {{INSIDE_JOKE}}
+                </p>
+                <div>
+                    <button type="button">Next</button>
+                    <button type="button">Shuffle</button>
+                </div>
+            </section>
+            </main>
+        <footer>
+            <p>{{DATE}}</p>
+        </footer>
+        <script src="script.js"></script>
     </body>
 </html>
