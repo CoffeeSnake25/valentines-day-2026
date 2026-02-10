@@ -39,3 +39,21 @@ footer {
     max-height: 500px; /* big enough for the note */
     opacity: 1;
 }
+
+.heart {
+    position: absolute;
+    font-size: 1.25rem;
+    pointer-events: none;
+    animation: float-up 700ms ease-out forwards;
+}
+
+@keyframes float-up {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-40px) scale(1.4);
+        opacity: 0;
+    }
+}

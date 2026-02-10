@@ -8,6 +8,14 @@ revealBtn.addEventListener("click", () => {
     longMessage.setAttribute("aria-hidden", String(!isOpen))
 
     revealBtn.textContent = isOpen ? "Hide my note" : "Reveal my note";
+
+    if (isOpen) {
+        const rect = revealBtn.getBoundingClientRect();
+        spawnHeart(
+            rect.left + rect.width / 2 + window.scrollX,
+            rect.top + window.scrollY
+        );
+    }
 });
 
 const reasons = [
@@ -27,6 +35,7 @@ if (nextBtn && shuffleBtn && reasonText) {
     nextBtn.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % reasons.length;
         reasonText.textContent = reasons[currentIndex];
+        
     })
 
     shuffleBtn.addEventListener("click", () => {
@@ -34,4 +43,18 @@ if (nextBtn && shuffleBtn && reasonText) {
         currentIndex = randomIndex;
         reasonText.textContent = reasons[currentIndex];
     })
+}
+
+function spawnHeart(x, y) {
+    const heart = document.createElement("span");
+    heart.className = "heart";
+    heart.textContent = "❤️";
+
+    heart.style.left = `${x}px`;
+    heart.style.top = `${y}px`;
+    heart.style.transform = "translateX(-50%)"
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 700);
 }
