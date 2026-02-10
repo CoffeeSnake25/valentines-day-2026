@@ -34,9 +34,11 @@ revealBtn.addEventListener("click", () => {
 });
 
 const reasons = [
-    "Reason one",
-    "Reason two",
-    "Reason three"
+    "You are the kindest person I know",
+    "You have the best laugh",
+    "You have an amazing smile",
+    "I get lost in your eyes",
+    "You let me see your boobs"
 ];
 
 let currentIndex = 0;

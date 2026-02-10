@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -5,6 +9,11 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0 0 0.5rem;
 }
 
 main {
@@ -12,6 +21,8 @@ main {
     margin: 0 auto;
     padding: 1.5rem;
     flex: 1;
+    border-radius: 1rem;
+    padding: 1.5rem;
 }
 
 button {
@@ -25,12 +36,19 @@ button {
 p {
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
+    margin: 0.5rem 0 0;
 }
 
 header,
 section,
 footer {
     margin-bottom: 2rem;
+}
+
+section div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 #long-message {
@@ -67,9 +85,6 @@ footer {
     * {
         animation: none !important;
         transition: none !important;
+        scroll-behavior: auto !important;
     }
-}
-
-* {
-    box-sizing: border-box;
 }
