@@ -1,3 +1,18 @@
+const card = document.querySelector("main");
+
+if (card) {
+    card.addEventListener("click", (e) => {
+    // prevent double hearts when clicking buttons
+    if (e.target.tagName === "BUTTON") return;
+
+    spawnHeart(
+        e.clientX + window.scrollX,
+        e.clientY + window.scrollY
+    );
+    });
+}
+
+
 const revealBtn = document.getElementById("reveal-btn")
 const longMessage = document.getElementById("long-message")
 
@@ -32,16 +47,27 @@ const reasonText = document.getElementById("reason-text");
 reasonText.textContent = reasons[currentIndex];
 
 if (nextBtn && shuffleBtn && reasonText) {
-    nextBtn.addEventListener("click", () => {
+    nextBtn.addEventListener("click", (e) => {
         currentIndex = (currentIndex + 1) % reasons.length;
         reasonText.textContent = reasons[currentIndex];
-        
-    })
 
-    shuffleBtn.addEventListener("click", () => {
+        const rect = e.target.getBoundingClientRect();
+        spawnHeart(
+            rect.left + rect.width / 2 + window.scrollX,
+            rect.top + window.scrollY
+        );
+    });
+
+    shuffleBtn.addEventListener("click", (e) => {
         const randomIndex = Math.floor(Math.random() * reasons.length);
         currentIndex = randomIndex;
         reasonText.textContent = reasons[currentIndex];
+
+        const rect = e.target.getBoundingClientRect();
+        spawnHeart(
+            rect.left + rect.width / 2 + window.scrollX,
+            rect.top + window.scrollY
+        );
     })
 }
 

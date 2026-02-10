@@ -22,6 +22,11 @@ button {
     cursor: pointer;
 }
 
+p {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
 header,
 section,
 footer {
@@ -56,4 +61,15 @@ footer {
         transform: translateY(-40px) scale(1.4);
         opacity: 0;
     }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+* {
+    box-sizing: border-box;
 }
