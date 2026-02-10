@@ -14,10 +14,15 @@
             <p>{{SHORT_NOTE}}</p>
         </header>
          <main>
+            <section aria-label="Reveal note">
+                <button id="reveal-btn" type="button" aria-expanded="false" aria-controls="long-message">
+                    Reveal My Note
+                </button>
+            </section>
             <section id="long-message" aria-hidden="true"> 
-                <p>
-                   {{LONG_NOTE}}
-                </p>
+                    <p>
+                        {{LONG_NOTE}}
+                    </p>
             </section>
             <section aria-labelledby="reasons-title">
                 <h2 id="reasons-title">Reasons Why You're My Favorite Person</h2>

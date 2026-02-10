@@ -27,3 +27,15 @@ section,
 footer {
     margin-bottom: 2rem;
 }
+
+#long-message {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 350ms ease, opacity 350ms ease;
+}
+
+#long-message.is-open {
+    max-height: 500px; /* big enough for the note */
+    opacity: 1;
+}
