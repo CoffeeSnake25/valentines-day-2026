@@ -32,7 +32,7 @@ function spawnHeart(x, y) {
   document.body.appendChild(heart);
 
   // Clean up after animation completes
-  setTimeout(() => heart.remove(), 700);
+  setTimeout(() => heart.remove(), 950);
 }
 
 
@@ -63,13 +63,31 @@ if (card) {
  * the long message is revealed.
  */
 
-let hasUnfolded = false;
-
-card.addEventListener("click", () => {
-  if (hasUnfolded) return;
+function unfoldCardIfNeeded() {
+  if (!card || hasUnfolded) return;
   hasUnfolded = true;
   card.classList.remove("is-folded");
-});
+}
+
+let hasUnfolded = false;
+
+if (card) {
+  card.addEventListener("click", (e) => {
+    // If you clicked a button (or anything inside a button), do nothing here.
+    const clickedButton = e.target.closest("button");
+    if (clickedButton) return;
+
+    // Unfold once on first non-button click
+    if (!hasUnfolded) {
+      hasUnfolded = true;
+      card.classList.remove("is-folded");
+    }
+
+    // Hearts still work on background clicks
+    spawnHeart(e.clientX + window.scrollX, e.clientY + window.scrollY);
+  });
+}
+
 
 
 
@@ -80,8 +98,11 @@ card.addEventListener("click", () => {
  * Toggles the long message open/closed with accessibility updates.
  */
 
+
+
 if (revealBtn && longMessage) {
   revealBtn.addEventListener("click", () => {
+    unfoldCardIfNeeded();
     const isOpen = longMessage.classList.toggle("is-open");
 
     revealBtn.setAttribute("aria-expanded", String(isOpen));
@@ -111,7 +132,9 @@ const reasons = [
   "You have the best laugh",
   "You have an amazing smile",
   "I get lost in your eyes",
-  "You let me see your boobs"
+  "You let me see your boobs",
+  "You make ordinary days feel special",
+  "You feel like home to me"
 ];
 
 let currentIndex = 0;
