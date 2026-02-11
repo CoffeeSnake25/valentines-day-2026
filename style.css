@@ -187,7 +187,7 @@ section div {
   max-height: 600px;
   opacity: 1;
   padding-top: 1rem;
-  border-top: 1.5px solid var(--accent-light);
+  border-top: 1px solid rgba(236, 72, 153, 0.25);
   margin-top: 1rem;
 }
 
@@ -203,7 +203,7 @@ section div {
 }
 
 #long-message .signature {
-  margin-top: 1.75rem;
+  margin-top: 2.25rem;
   opacity: 0.95;
   font-weight: 500;
   color: var(--text);
