@@ -55,6 +55,23 @@ if (card) {
   });
 }
 
+/**
+ * ================================
+ * CARD FOLD ANIMATION
+ * ================================
+ * Folds the card back slightly when
+ * the long message is revealed.
+ */
+
+let hasUnfolded = false;
+
+card.addEventListener("click", () => {
+  if (hasUnfolded) return;
+  hasUnfolded = true;
+  card.classList.remove("is-folded");
+});
+
+
 
 /**
  * ================================

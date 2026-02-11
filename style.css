@@ -83,6 +83,12 @@ main {
     flex: 1;
     border-radius: 1.25rem;
     transition: box-shadow 300ms ease, border-color 300ms ease;
+    transform-origin: top center;
+}
+
+main.is-folded {
+  transform: perspective(1200px) rotateX(-12deg) scale(0.97);
+  filter: brightness(0.98);
 }
 
 main:hover {
