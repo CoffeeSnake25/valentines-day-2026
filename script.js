@@ -35,26 +35,6 @@ function spawnHeart(x, y) {
   setTimeout(() => heart.remove(), 950);
 }
 
-
-/**
- * ================================
- * CARD INTERACTION (HEARTS ON CLICK)
- * ================================
- * Clicking anywhere inside the card spawns a heart,
- * except when clicking buttons (handled separately).
- */
-
-if (card) {
-  card.addEventListener("click", (e) => {
-    if (e.target.tagName === "BUTTON") return;
-
-    spawnHeart(
-      e.clientX + window.scrollX,
-      e.clientY + window.scrollY
-    );
-  });
-}
-
 /**
  * ================================
  * CARD FOLD ANIMATION
