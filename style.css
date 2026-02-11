@@ -59,7 +59,6 @@ header h1 {
 header p {
     color: var(--muted);
     font-size: 1.05rem;
-    color: --var(--muted);
 }
 
 main {
@@ -72,6 +71,7 @@ main {
     padding: 1.5rem;
     flex: 1;
     border-radius: 1rem;
+}
 
 button {
     background: linear-gradient(180deg, var(--accent), #be123c);
@@ -132,12 +132,6 @@ section div {
 #long-message p:first-child {
   font-weight: 600;
   color: var(--accent);
-}
-
-
-#long-message.is-open {
-    max-height: 500px; /* big enough for the note */
-    opacity: 1;
 }
 
 .heart {
